@@ -12,7 +12,12 @@ namespace Mission13MySQLDB.Controllers
     public class HomeController : Controller
     {
  
+
+        // creates repo
         private IBowlersRepository repo { get; set; }
+
+
+        // constructor
         public HomeController(IBowlersRepository temp)
         {
             repo = temp;
@@ -20,8 +25,15 @@ namespace Mission13MySQLDB.Controllers
 
         public IActionResult Index()
         {
+
+            // gets all bowlers in a list, sent to the viewbag
             ViewBag.Bowlers = repo.Bowlers.ToList();
 
+            return View();
+        }
+
+        public IActionResult AddEditBowerls()
+        {
             return View();
         }
 
