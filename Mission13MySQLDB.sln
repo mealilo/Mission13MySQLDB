@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mission13MySQLDB", "Mission13MySQLDB.csproj", "{304DB252-8473-40FD-AEDD-D7E1ADF5431F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{304DB252-8473-40FD-AEDD-D7E1ADF5431F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304DB252-8473-40FD-AEDD-D7E1ADF5431F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304DB252-8473-40FD-AEDD-D7E1ADF5431F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304DB252-8473-40FD-AEDD-D7E1ADF5431F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13034BE3-E73C-4572-9CCF-8F0FAC6716D2}
+	EndGlobalSection
+EndGlobal
