@@ -3,7 +3,44 @@
 }
 
 <div class="container">
-    <table>
+
+
+    @if (ViewBag.ChosenTeam != null)
+            {
+    <h2>@ViewBag.ChosenTeam.TeamName</h2>  
+            }
+    <form method="post" asp-action="Index">
+
+
+        <select onchange="this.form.submit()" name="chosenteam">
+            @foreach (Team team in ViewBag.Teams)
+            {
+
+                @if (ViewBag.ChosenTeam != null)
+                {
+                    if (@ViewBag.ChosenTeam.TeamName == team.TeamName)
+                    {
+                        <option class="bg-primary" selected value="@team.TeamID">@team.TeamName</option>
+                    }
+                    else
+                    {
+                        <option value="@team.TeamID">@team.TeamName</option>
+                    }
+
+                }
+
+                else
+                {
+                    <option value="@team.TeamID">@team.TeamName</option>
+                }
+
+
+
+
+            }
+        </select>
+    </form>
+    <table class="table tale-hover table-striped table-bordered">
         <tr>
             <th>First Name</th>
             <th>Middle Name</th>
@@ -11,29 +48,39 @@
             <th>Address</th>
             <th>City</th>
             <th>State</th>
-            <th>First Name</th>
-            <th>First Name</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Edit</th>
+            <th>Delete</th>
 
         </tr>
 
 
-        @foreach(Bowler b in ViewBag.Bowlers)
-            {
-    <tr>
-        <td>@b.BowlerFirstName</td>
-        <td>@b.BowlerMiddleInit</td>
-        <td>@b.BowlerLastName</td>
-        <td>@b.BowlerAddress</td>
-        <td>@b.BowlerCity</td>
-        <td>@b.BowlerState</td>
-        <td>@b.BowlerZip</td>
-        <td>@b.BowlerPhoneNumber</td>
-    </tr>
-            }
+        @foreach (Bowler b in ViewBag.Bowlers)
+        {
+            <tr>
+                <td>@b.BowlerFirstName</td>
+                <td>@b.BowlerMiddleInit</td>
+                <td>@b.BowlerLastName</td>
+                <td>@b.BowlerAddress</td>
+                <td>@b.BowlerCity</td>
+                <td>@b.BowlerState</td>
+                <td>@b.BowlerZip</td>
+                <td>@b.BowlerPhoneNumber</td>
+
+                <td>
+                    <a class="btn btn-primary" asp-controller="Home" asp-action="AddEditBowerls" asp-route-bowlerid="@b.BowlerID">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-controller="Home" asp-action="Delete" asp-route-bowlerid="@b.BowlerID">Delete</a>
+                </td>
+
+            </tr>
+        }
     </table>
 
 
     <div class="d-flex justify-content-center">
-        <a>Add Bowler</a>
+        <a class="btn btn-primary" asp-controller="Home" asp-action="AddEditBowerls" asp-route-bowlerid="0">Add Bowler</a>
     </div>
 </div>

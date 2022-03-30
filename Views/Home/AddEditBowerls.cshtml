@@ -45,10 +45,16 @@
 
 
 
+    <select  asp-for="TeamID">
+        @foreach (Team team in ViewBag.Teams)
+        {
+            <option value="@team.TeamID">@team.TeamName</option>
+        }
+    </select>
+
     <div class="float-end">
         <input class="btn btn-primary" type="submit" value="Confirm Bowler" />
     </div>
 
-    <input type="hidden" name="TimeId" value="@ViewBag.TimeId" />
 
 </form>

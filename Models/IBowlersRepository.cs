@@ -11,5 +11,10 @@ namespace Mission13MySQLDB.Models
         IQueryable<Bowler> Bowlers { get; }
 
         IQueryable<Team> Teams { get; }
+
+        public void Delete(Bowler bowler);
+
+        //add or edit appointment
+        public void DoAppointment(Bowler bowler);
     }
 }

@@ -19,5 +19,25 @@ namespace Mission13MySQLDB.Models
         public IQueryable<Bowler> Bowlers => _context.Bowlers;
 
         public IQueryable<Team> Teams => _context.Teams;
+
+        public void Delete(Bowler bowler)
+        {
+            _context.Remove(bowler);
+            _context.SaveChanges();
+        }
+
+        public void DoAppointment(Bowler bowler)
+        {
+            if (bowler.BowlerID == 0)
+            {
+                _context.Bowlers.Add(bowler);
+            }
+            else
+            {
+                _context.Update(bowler);
+            }
+
+            _context.SaveChanges();
+        }
     }
 }
